@@ -5,7 +5,8 @@ public class CamBot : MonoBehaviour
 {
 
 	// Use this for initialization
-	void Start ()
+
+    void Start ()
     {
         GetComponent<Health>().OnDied.AddListener(Dead);
 	}
