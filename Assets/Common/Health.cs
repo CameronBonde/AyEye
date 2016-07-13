@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour
+{
+    public int amount;
+    int max = 100;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public UnityEvent OnDied;
+    
+    public void ChangeHealth(int _amount)
+    {
+        amount += _amount;
+        if (amount<=0)
+        {
+            OnDied.Invoke();
+        }
+    }
 }
